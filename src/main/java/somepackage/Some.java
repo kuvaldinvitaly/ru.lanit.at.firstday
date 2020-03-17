@@ -22,17 +22,12 @@ public class Some extends Abstract implements Contract {
      */
     public String noMoreSecrets;
 
-    public Some() {
-        super();
-    }
-
     /**
      * Геттер публичного поля.
      * Бессмысленный и беспощадный.
      * @return это вообще кто-то читает?
      */
     public String getNoMoreSecrets() {
-
         return noMoreSecrets;
     }
 
@@ -42,7 +37,6 @@ public class Some extends Abstract implements Contract {
      * @param noMoreSecrets принимаемый параметр. Надеемся, это будет String.
      */
     public void setNoMoreSecrets(String noMoreSecrets) {
-
         this.noMoreSecrets = noMoreSecrets;
     }
 
@@ -61,7 +55,6 @@ public class Some extends Abstract implements Contract {
      * @return стринговое значение поля.
      */
     public String getSecret() {
-
         return secret;
     }
     /**
@@ -71,7 +64,7 @@ public class Some extends Abstract implements Contract {
      */
     public String getSecret(Boolean trustMe) {
         if(trustMe)
-        this.secret = noMoreSecrets; //Не повторяйте это дома! Это же еще и поле перезапишет!
+            this.secret = noMoreSecrets; //Не повторяйте это дома! Это же еще и поле перезапишет!
         return secret;
     }
 
@@ -87,7 +80,6 @@ public class Some extends Abstract implements Contract {
     /*Этот метод имплементирован от абстрактного класса. Думаете, у него нет джавадока? Ctrl+Q*/
     @Override
     public String toString() {
-
         return "Что вы тут надеялись увидеть?";
     }
 

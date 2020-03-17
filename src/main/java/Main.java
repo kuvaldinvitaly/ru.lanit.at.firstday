@@ -6,28 +6,28 @@ import javax.sound.midi.Soundbank;
 public class Main {
     public static void main(String[] args) {
 
-        Some some = new Some();
-        System.out.println(some);
+        Some some = new Some("Это новый секрет"); //вызов род класса Abstract, ДаТактожеможно=Это уже не секрет, secret=Это новый секрет
 
-        some.setNoMoreSecrets("Это наш первый секрет");
-        System.out.println(some.getNoMoreSecrets());
+        some.getSecret(false); // достаем секрет=Это новый секрет без присваивания secret = noMoreSecrets
+        System.out.println(some.getSecret()); //печатаем секрет 2 строка
 
-        some.setNoMoreSecrets(123);
-        System.out.println(some.getNoMoreSecrets());
+        some.getSecret(true); // достаем секрет=Это новый секрет с присваиванием secret = noMoreSecrets, где noMoreSecrets=null
+        System.out.println(some.getSecret()); //печатаем секрет 3 строка = null
 
-        some.getSecret(false);
-        System.out.println(some.getSecret());
+        some.setNoMoreSecrets("Это наш первый секрет"); // присваиваем новое стринговое значение в noMoreSecret
+        System.out.println(some.getNoMoreSecrets()); // печатаем 4 строку
 
-        some.getSecret(true);
-        System.out.println(some.getSecret());
+        some.getSecret(true); // достаем секрет=Это новый секрет с присваиванием secret = noMoreSecrets, где noMoreSecrets= "Это наш первый секрет"
+        System.out.println(some.getSecret()); //печатаем 5 строку
 
-        Some some1 = new Some("Это наш второй секрет");
-        System.out.println(some1.getSecret());
-        System.out.println(some1.getДаТакТожеМожно());
+        some.setNoMoreSecrets(123); // присваиваем новое числовое значение в noMoreSecret
+        System.out.println(some.getNoMoreSecrets());  // печатаем 6 строку
 
-        some.soTellMeAboutInterfaces();
+        System.out.println(some.getДаТакТожеМожно()); // достаем значение из род класса Abstract
 
-        int someCount = some.count();
+        some.soTellMeAboutInterfaces(); // вызов метода имплементированного интерфейса
+
+        int someCount = some.count(); //реализуем счетчик
         for (int i = 0; i < 10; i++){
             someCount++;
             System.out.print(someCount + " ");
@@ -35,8 +35,7 @@ public class Main {
         System.out.println();
 
         System.out.println(some.hashCode());
-        System.out.println(some.equals(some1));
         System.out.println(some.getClass());
-        
+
     }
 }
